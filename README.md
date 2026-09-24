@@ -49,14 +49,41 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
 -- PERCENTAGE IS 49.80% PER FEMALE , 50.20% PER MALE
 --------------
 
-## Q3️⃣ Count of patients month‑over‑month (MOM)  
-→ Tracks diagnosis trends over time to identify seasonal or yearly patterns.
+## Q2 Count of patients month‑over‑month (MOM)
+SET SQL_SAFE_UPDATES=0;
+ 
+update health.care 
+set `OCD Diagnosis Date`=str_to_date(`OCD Diagnosis Date`,'%m/%d/%Y')
+where str_to_date(`OCD Diagnosis Date`,'%m/%d/%Y') is not null ;
 
-## Q4️⃣ Find the most common obsession type and its average score  
-→ Highlights dominant OCD manifestations and their intensity.
+alter table health.care 
+modify column `OCD Diagnosis Date`date;
+select
+count(*) patient_count,
+date_format(`OCD Diagnosis Date`,'%Y-%m-01 00:00:00') month
+from health.care 
+group by month
+order by month ;
 
-## Q5️⃣ Find the most common compulsion type and its average compulsion score  
-→ Identifies behavioral patterns and severity levels across patients.
+## Q4 Find the most common obsession type and its average score  
+select `Obsession Type`,
+count(*) total_pat,
+round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score
+from health.care
+group by `Obsession Type`
+order by total_pat
+limit 1;
+
+
+## Q5️ Find the most common compulsion type and its average compulsion score  
+select `Compulsion Type`,
+count(*) total_pat,
+round(avg(`Y-BOCS Score (Compulsions)`),2) avg_score
+from health.care
+group by 1
+order by 2 
+limit 1;
+
 
 First 2 queries was executed using CTEs (Common Table Expressions) for clarity and modular analysis.
 
