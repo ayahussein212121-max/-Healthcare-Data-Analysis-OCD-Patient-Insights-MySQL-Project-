@@ -28,7 +28,7 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  
 -----
 ### Q2 Calculate patient count and percentage by gender 
-```SQL
+```SQL2
  with CTE_TOTAL_GENDER AS
  ( 
 	select count(*) total_pat,gender,
@@ -46,8 +46,6 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  from TOTAL_PATIENTS t
  join CTE_TOTAL_GENDER g;
 
-	
- 
 -- PERCENTAGE IS 49.80% PER FEMALE , 50.20% PER MALE
 --------------
 
