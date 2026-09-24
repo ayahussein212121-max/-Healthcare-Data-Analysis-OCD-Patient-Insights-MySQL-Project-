@@ -27,7 +27,7 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  ----the  avg_score_obs is 20.20 per 'female' and 19.90 per 'male'
  
 -----
-### Q2 Calculate patient count and percentage by gender 
+###Q2 Calculate patient count and percentage by gender 
 ```SQL2
  with CTE_TOTAL_GENDER AS
  ( 
