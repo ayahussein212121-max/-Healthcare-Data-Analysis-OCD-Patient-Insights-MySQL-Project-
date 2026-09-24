@@ -18,13 +18,13 @@ Comorbidities & Treatment: Depression/Anxiety Diagnosis, Medications
 
 
  ## Analytical Questions & SQL Approach 🧠
-## Q1 Count of patients by gender and their average obsession score  
-----sql1
+### Q1 Count of patients by gender and their average obsession score  
+```sql
 select count(*) total_patient,gender,
 round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  from health.care
  group by gender;
- ----the  avg_score_obs is 20.20 per 'female' and 19.90 per 'male
+ ----the  avg_score_obs is 20.20 per 'female' and 19.90 per 'male'
  
 -----
 
