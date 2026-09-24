@@ -46,7 +46,8 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  round((total_pat/t.total)*100,2) percentg
  from TOTAL_PATIENTS t
  join CTE_TOTAL_GENDER g;
--- PERCENTAGE IS 49.80% PER FEMALE , 50.20% PER MALE
+----- PERCENTAGE IS 49.80% PER FEMALE , 50.20% PER MALE
+
 --------------
 
 ## Q2 Count of patients month‑over‑month (MOM)
@@ -73,7 +74,7 @@ from health.care
 group by `Obsession Type`
 order by total_pat
 limit 1;
-
+---------------------------------
 
 ## Q5️ Find the most common compulsion type and its average compulsion score  
 select `Compulsion Type`,
@@ -84,10 +85,10 @@ group by 1
 order by 2 
 limit 1;
 
-
+----------------------------------------
 First 2 queries was executed using CTEs (Common Table Expressions) for clarity and modular analysis.
 
-
+----------------------------------------------
 
 
 ## Tools & Techniques 🧩
