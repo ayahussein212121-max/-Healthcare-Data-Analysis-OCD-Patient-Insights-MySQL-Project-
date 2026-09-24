@@ -26,6 +26,7 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  from health.care
  group by gender;
 ---the avg_score_obs is 20,20 for Females, and 19,90 for males
+-----
 
 ## Q2️⃣ Calculate patient count and percentage by gender  
 → Measures demographic distribution and representation.
