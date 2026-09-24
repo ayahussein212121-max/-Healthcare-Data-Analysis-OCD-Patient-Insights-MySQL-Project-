@@ -95,11 +95,14 @@ MySQL Workbench — data cleaning, querying, and aggregation
 SQL Functions: COUNT(), AVG(), ROUND(), GROUP BY, CTE, and date functions
 Data Export: .sql dump for reproducibility and GitHub documentation
 
- ## Key Insights (examples) 💡
-Female patients show slightly higher average obsession scores.
-Harm‑related and contamination obsessions are the most frequent types.
-SSRIs are the most common medication among patients with anxiety comorbidity.
-Diagnosis frequency increased steadily over recent years.
-
-
-
+ ## Key Insights💡
+1- Female patients show a slightly higher average obsession score (20.20) compared to males (19.90).
+➡️ Insight: Gender may play a role in OCD symptom severity, with females experiencing marginally stronger obsessive symptoms
+2-Patient distribution is nearly balanced: 49.8% female vs. 50.2% male.
+➡️ Insight: OCD prevalence is evenly spread across genders, making differences in severity more clinically relevant than raw counts
+3-Patient counts vary across months, showing fluctuations in diagnosis frequency.
+➡️ Insight: Tracking diagnosis trends over time may reveal external triggers such as stress cycles, academic/work seasons, or environmental factors
+4-The most frequent obsession type is Contamination, with the highest patient count and notable average severity scores.
+➡️ Insight: Contamination fears are the dominant OCD manifestation, consistent with clinical literature
+5-The most frequent compulsion type is Washing, with strong average compulsion scores.
+➡️ Insight: This reinforces the link between contamination obsessions and washing compulsions — a classic OCD pattern.
