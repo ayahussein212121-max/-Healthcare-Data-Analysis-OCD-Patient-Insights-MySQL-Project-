@@ -28,8 +28,25 @@ round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
  
 -----
 
-## Q2️⃣ Calculate patient count and percentage by gender  
-→ Measures demographic distribution and representation.
+### Q2 Calculate patient count and percentage by gender 
+ with CTE_TOTAL_GENDER AS
+ ( 
+	select count(*) total_pat,gender,
+round(avg(`Y-BOCS Score (Obsessions)`),2) avg_score_obs
+ from health.care
+ group by gender)
+ ,TOTAL_PATIENTS
+ AS (
+ SELECT SUM(total_pat) TOTAL
+ FROM CTE_TOTAL_GENDER)
+ SELECT g.total_pat,
+ g.gender,
+ g.avg_score_obs,
+ round((total_pat/t.total)*100,2) percentg
+ from TOTAL_PATIENTS t
+ join CTE_TOTAL_GENDER g;
+-- PERCENTAGE IS 49.80% PER FEMALE , 50.20% PER MALE
+--------------
 
 ## Q3️⃣ Count of patients month‑over‑month (MOM)  
 → Tracks diagnosis trends over time to identify seasonal or yearly patterns.
